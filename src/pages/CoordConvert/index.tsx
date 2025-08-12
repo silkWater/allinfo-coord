@@ -56,15 +56,18 @@ const CoordConvert: React.FC = () => {
 
   // 지도 클릭 이벤트 처리
   const handleMapClick = (lat: number, lon: number) => {
+    // 새로운 위경도로 UTM 좌표를 즉시 계산
+    const utmResult = latLonToUtm(lat, lon);
+    
+    // 모든 좌표를 한 번에 업데이트
     setCoordinates(prev => ({
       ...prev,
       latitude: lat,
-      longitude: lon
+      longitude: lon,
+      utmZone: utmResult.zone,
+      utmEasting: utmResult.easting,
+      utmNorthing: utmResult.northing
     }));
-    // 지도 클릭 시 자동으로 UTM 좌표 계산
-    setTimeout(() => {
-      handleConvertLatLonToUtm();
-    }, 100);
   };
 
   return (

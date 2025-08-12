@@ -21,12 +21,15 @@ const CoordPoint: React.FC<CoordPointProps> = ({
   };
 
   const handleLatLonBlur = () => {
+    // 위경도 입력 완료 시 자동으로 UTM 좌표 계산
     onConvertLatLonToUtm();
   };
 
   return (
-    <div className="coord-point-panel">
-      <div className="coord-point-section">
+    <div className="coordinates-panel">
+      <h2>좌표 변환 서비스 (Point)</h2>
+      
+      <div className="coordinate-section">
         <h3>위경도 좌표</h3>
         <div className="input-group">
           <label>위도 (Latitude):</label>
@@ -50,7 +53,7 @@ const CoordPoint: React.FC<CoordPointProps> = ({
         </div>
       </div>
 
-      <div className="coord-point-section">
+      <div className="coordinate-section">
         <h3>UTM 좌표</h3>
         <div className="input-group">
           <label>UTM Zone:</label>
