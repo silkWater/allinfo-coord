@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 import { Coordinates } from '../../types/coordinates';
 import { utmToLatLon, latLonToUtm } from '../../utils/coordinateConverter';
 
-const CoordinateConverterPage: React.FC = () => {
+const CoordConvert: React.FC = () => {
   const [coordinates, setCoordinates] = useState<Coordinates>({
     latitude: 37.5665,
     longitude: 126.9780,
@@ -90,4 +90,4 @@ const CoordinateConverterPage: React.FC = () => {
   );
 };
 
-export default CoordinateConverterPage;
+export default CoordConvert;

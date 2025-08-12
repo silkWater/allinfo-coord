@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { Coordinates } from '../types/coordinates';
+import { Coordinates } from '../../types/coordinates';
+import './style.css';
 
 interface MapProps {
   coordinates: Coordinates;
@@ -13,51 +14,12 @@ const Map: React.FC<MapProps> = ({ coordinates, onMapClick }) => {
     if (mapRef.current) {
       const mapContainer = mapRef.current;
       mapContainer.innerHTML = `
-        <div style="
-          width: 100%; 
-          height: 100%; 
-          background: linear-gradient(45deg, #e3f2fd, #bbdefb);
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: crosshair;
-        ">
-          <div style="
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-          ">
+        <div class="map-inner">
+          <div class="map-instruction">
             지도를 클릭하여 좌표를 선택하세요
           </div>
-          <div style="
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 20px;
-            height: 20px;
-            background: red;
-            border: 2px solid white;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
-          "></div>
-          <div style="
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 12px;
-            border-radius: 5px;
-            font-size: 11px;
-            color: #666;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-          ">
+          <div class="map-center-marker"></div>
+          <div class="map-coordinates-display">
             현재: ${coordinates.latitude.toFixed(6)}, ${coordinates.longitude.toFixed(6)}
           </div>
         </div>

@@ -1,0 +1,44 @@
+/* Footer 컴포넌트 스타일 */
+.footer {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-bottom {
+  background: #2c3e50;
+  padding: 8px 20px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #95a5a6;
+  font-size: 0.85rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .footer {
+    height: 35px;
+  }
+
+  .footer-bottom {
+    padding: 6px 15px;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+}

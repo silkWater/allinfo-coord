@@ -1,5 +1,6 @@
 import React from 'react';
-import { Coordinates } from '../types/coordinates';
+import { Coordinates } from '../../types/coordinates';
+import './style.css';
 
 interface CoordinatesPanelProps {
   coordinates: Coordinates;
