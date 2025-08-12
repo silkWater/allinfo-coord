@@ -1,5 +1,5 @@
-/* CoordinatesPanel 컴포넌트 스타일 */
-.coordinates-panel {
+/* CoordPointPanel 컴포넌트 스타일 */
+.coord-point-panel {
   flex: 0 0 30%;
   height: 100%;
   padding: 20px;
@@ -8,7 +8,7 @@
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.coordinates-panel h2 {
+.coord-point-panel h2 {
   color: #333;
   margin-bottom: 20px;
   text-align: center;
@@ -17,7 +17,7 @@
   padding-bottom: 10px;
 }
 
-.coordinate-section {
+.coord-point-section {
   margin-bottom: 25px;
   padding: 15px;
   background: #f8f9fa;
@@ -25,7 +25,7 @@
   border-left: 4px solid #2196f3;
 }
 
-.coordinate-section h3 {
+.coord-point-section h3 {
   color: #1976d2;
   margin-bottom: 15px;
   font-size: 1.1rem;
@@ -108,31 +108,31 @@
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
-  .coordinates-panel {
+  .coord-point-panel {
     flex: 0 0 40%;
     padding: 15px;
   }
   
-  .coordinates-panel h2 {
+  .coord-point-panel h2 {
     font-size: 1.3rem;
   }
 }
 
 /* 스크롤바 스타일링 */
-.coordinates-panel::-webkit-scrollbar {
+.coord-point-panel::-webkit-scrollbar {
   width: 6px;
 }
 
-.coordinates-panel::-webkit-scrollbar-track {
+.coord-point-panel::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 3px;
 }
 
-.coordinates-panel::-webkit-scrollbar-thumb {
+.coord-point-panel::-webkit-scrollbar-thumb {
   background: #c1c1c1;
   border-radius: 3px;
 }
 
-.coordinates-panel::-webkit-scrollbar-thumb:hover {
+.coord-point-panel::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
 }

@@ -2,14 +2,14 @@ import React from 'react';
 import { Coordinates } from '../../types/coordinates';
 import './style.css';
 
-interface CoordinatesPanelProps {
+interface CoordPointProps {
   coordinates: Coordinates;
   onCoordinatesChange: (field: keyof Coordinates, value: number) => void;
   onConvertUtmToLatLon: () => void;
   onConvertLatLonToUtm: () => void;
 }
 
-const CoordinatesPanel: React.FC<CoordinatesPanelProps> = ({
+const CoordPoint: React.FC<CoordPointProps> = ({
   coordinates,
   onCoordinatesChange,
   onConvertUtmToLatLon,
@@ -25,10 +25,8 @@ const CoordinatesPanel: React.FC<CoordinatesPanelProps> = ({
   };
 
   return (
-    <div className="coordinates-panel">
-      <h2>좌표 변환 서비스</h2>
-      
-      <div className="coordinate-section">
+    <div className="coord-point-panel">
+      <div className="coord-point-section">
         <h3>위경도 좌표</h3>
         <div className="input-group">
           <label>위도 (Latitude):</label>
@@ -52,7 +50,7 @@ const CoordinatesPanel: React.FC<CoordinatesPanelProps> = ({
         </div>
       </div>
 
-      <div className="coordinate-section">
+      <div className="coord-point-section">
         <h3>UTM 좌표</h3>
         <div className="input-group">
           <label>UTM Zone:</label>
@@ -102,4 +100,4 @@ const CoordinatesPanel: React.FC<CoordinatesPanelProps> = ({
   );
 };
 
-export default CoordinatesPanel;
+export default CoordPoint;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Map from '../../components/Map';
-import CoordinatesPanel from '../../components/CoordinatesPanel';
+import CoordinatesPoint from '../../components/CoordPoint';
 import Footer from '../../components/Footer';
 import { Coordinates } from '../../types/coordinates';
 import { utmToLatLon, latLonToUtm } from '../../utils/coordinateConverter';
@@ -77,7 +77,7 @@ const CoordConvert: React.FC = () => {
         />
         
         {/* 좌표 입력 영역 (30%) */}
-        <CoordinatesPanel
+        <CoordinatesPoint
           coordinates={coordinates}
           onCoordinatesChange={handleCoordinatesChange}
           onConvertUtmToLatLon={handleConvertUtmToLatLon}
