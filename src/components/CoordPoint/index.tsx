@@ -27,7 +27,7 @@ const CoordPoint: React.FC<CoordPointProps> = ({
 
   return (
     <div className="coordinates-panel">
-      <h2>좌표 변환 서비스 (Point)</h2>
+      <h2>Point 변환</h2>
       
       <div className="coordinate-section">
         <h3>위경도 좌표</h3>

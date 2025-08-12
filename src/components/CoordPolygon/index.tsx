@@ -18,8 +18,8 @@ const CoordPolygon: React.FC<CoordPolygonProps> = ({
   
 
   return (
-    <div className="coordinates-panel">     
-      
+    <div className="coordinates-panel">
+      <h2>Polygon 변환</h2>
     </div>
   );
 };
