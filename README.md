@@ -1,46 +1,79 @@
-# Getting Started with Create React App
+# 지도 기반 좌표변환 서비스
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 프로젝트는 지도를 기반으로 한 좌표변환 서비스입니다. 사용자는 지도를 클릭하거나 좌표를 직접 입력하여 위경도와 UTM 좌표 간의 변환을 수행할 수 있습니다.
 
-## Available Scripts
+## 주요 기능
 
-In the project directory, you can run:
+- **지도 기반 좌표 선택**: 지도를 클릭하여 원하는 위치의 좌표를 선택
+- **위경도 ↔ UTM 좌표 변환**: 위경도 좌표와 UTM 좌표 간의 양방향 변환
+- **실시간 계산**: 위경도 입력 시 자동으로 UTM 좌표 계산
+- **반응형 디자인**: 모바일과 데스크톱 환경에 최적화된 레이아웃
 
-### `yarn start`
+## 레이아웃 구성
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **지도 영역 (70%)**: 화면 왼쪽 70%를 차지하는 지도 영역
+- **좌표 입력 패널 (30%)**: 화면 오른쪽 30%를 차지하는 좌표 입력 및 변환 패널
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 프로젝트 구조
 
-### `yarn test`
+```
+src/
+├── components/           # 재사용 가능한 컴포넌트
+│   ├── Map.tsx         # 지도 컴포넌트
+│   └── CoordinatesPanel.tsx  # 좌표 입력 패널 컴포넌트
+├── pages/               # 페이지 컴포넌트
+│   └── CoordinateConverterPage.tsx  # 메인 좌표변환 페이지
+├── types/               # TypeScript 타입 정의
+│   └── coordinates.ts   # 좌표 관련 타입
+├── utils/               # 유틸리티 함수
+│   └── coordinateConverter.ts  # 좌표변환 로직
+├── App.tsx              # 메인 앱 컴포넌트
+└── App.css              # 스타일시트
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 사용법
 
-### `yarn build`
+1. **지도에서 좌표 선택**: 지도를 클릭하여 원하는 위치의 좌표를 선택
+2. **위경도 좌표 입력**: 위도와 경도를 직접 입력하여 UTM 좌표 자동 계산
+3. **UTM 좌표 변환**: UTM Zone, Easting, Northing을 입력하고 변환 버튼 클릭
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 기술 스택
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React 19
+- TypeScript
+- CSS3 (Flexbox, Grid)
+- 좌표변환 알고리즘 (UTM ↔ 위경도)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 설치 및 실행
 
-### `yarn eject`
+```bash
+# 의존성 설치
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# 개발 서버 실행
+npm start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 프로덕션 빌드
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 좌표계 정보
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **위경도**: WGS84 좌표계 사용
+- **UTM**: Universal Transverse Mercator 좌표계
+- **정확도**: 교육 및 일반적인 용도에 적합한 수준
 
-## Learn More
+## 확장성
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+이 프로젝트는 One Page 애플리케이션이지만, 추후 확장을 고려하여 다음과 같이 구조화되었습니다:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **컴포넌트 분리**: 재사용 가능한 컴포넌트로 분리
+- **타입 정의**: TypeScript 타입을 별도 파일로 관리
+- **유틸리티 분리**: 비즈니스 로직을 별도 파일로 분리
+- **페이지 구조**: 향후 라우팅 추가 시 쉽게 확장 가능
+
+## 참고사항
+
+- 현재 구현된 좌표변환은 교육 목적의 간단한 알고리즘입니다
+- 정확한 측지학적 변환이 필요한 경우 proj4js 등의 전문 라이브러리 사용을 권장합니다
+- 지도는 현재 간단한 시각적 표현으로 구현되어 있으며, 실제 지도 서비스 연동 시 더 정확한 좌표 변환이 가능합니다
